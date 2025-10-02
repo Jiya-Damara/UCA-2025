@@ -9,14 +9,11 @@
 
 </div>
 
----
 
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-blue?style=for-the-badge)](https://github.com/Jiya-Damara/UCA-2025)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Jiya-Damara/UCA-2025?style=for-the-badge&color=blue)](https://github.com/Jiya-Damara/UCA-2025)
 
 </div>
-
----
 
 ## 📝 About
 
@@ -89,7 +86,7 @@ git clone https://github.com/YourUsername/YourRepoName.git
 
 ---
 
-**Made with ❤️ during UCA Batch**
+**Made with ❤️ by Jiya**
 
 ⭐ *If you find this helpful, consider giving it a star!* ⭐
 
