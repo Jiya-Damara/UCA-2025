@@ -4,11 +4,15 @@
 
 ### *Welcome to my **UCA batch study repository**!*
 
-![Study Time](./9b5dd43a-b850-4062-8913-24e6c694daff.png)
+<div align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=9b59b6&center=true&vCenter=true&width=435&lines=Tech+Enthusiast;Problem+Solver;Passionate+Coder;Full+Stack+Developer;DSA+Enthusiast" alt="Typing SVG" />
+  </a>
+</div>
 
 ---
 
-[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red?style=for-the-badge)](https://github.com/Jiya-Damara/UCA-2025)
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-blue?style=for-the-badge)](https://github.com/Jiya-Damara/UCA-2025)
 [![GitHub last commit](https://img.shields.io/github/last-commit/Jiya-Damara/UCA-2025?style=for-the-badge&color=blue)](https://github.com/Jiya-Damara/UCA-2025)
 
 </div>
