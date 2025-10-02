@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="css/styles.css"/>
+    <!-- <script src="script.js" defer></script> -->
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="script.js" defer></script>
+    <script type="type/jsx" src="rscript.js" defer></script>
+    <script src="data.js" async></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div>
+            <header id="header">Welcome to eCommerse Site</header>
+        </div>
+        <div id="tag1">List of Products</div>
+        <div id="tag2"></div>
+        <div id="data"></div>
+
+        <div id="reactapp"></div>
+        <!-- This tells babel ke jsx hai aur transpile karna hai 
+        <script type = "text/jsx">  
+            var app = document.getElementById("reactapp");
+            var root = ReactDOM.createRoot(app);
+            root.render(<h1> Hello, worls </h1>); // <h1> here - custom tags that react uses built on top of html
+            // have to be transpiled this jsx into regular html and js (eg. babel)
+        </script>
+        -->
+
+        <!-- Added this to script.js - not js file anymore acts like jsx file, browser js ki file ke tarah nhi karta, jsx ko last mai download -->
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+body {
+    margin: 20px 10px;
+    font-size: 25px;
+}
+
+div {
+    font-size: 40px;
+}
+/* 
+div { --- div is HTMl element selector (id, class, attribute, pseudo-class, pseudo-element selectors are also there)
+    font-size: 20px; ---- latest use hoga 
+} */
+
+div{
+    background-color: lightgray;
+    margin: 15px;
+    font-weight: 600;
+}
+
+table {
+    margin-top: auto;
+}
+table, th, tr, td {
+    font-size: 30px;
+    border: 1px solid black;
+    border-collapse: collapse;
+    padding: 30px;
+}
+
+header {
+    font-size: 40px;
+}
+
+#header {
+    margin: 40px;
+}
+
+#tag1 {
+    font-size: 30px;
+}
+
+#reactapp {
+    font-size: 50px;
+    color: blue;
+}

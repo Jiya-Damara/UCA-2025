@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- HTML - executes code line by line -->
+<html lang="en">
+<head> <!-- define dependencies, top priority pr execute hota hai -->
+    <!-- meta - info abt data, here defines properties and characterstics -->
+    <meta charset="UTF-8"> <!-- define by default encoding of characters / specific char set -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- to support mobiles, tabs, any other devices other than desktop; name of meta (not property) = viewport; next {width=device-width} defines ke application ko device ke width ke acc width assign hogi; {initial-scale=1.0} tells about initial zoom level, 1 is 100%-->
+    <!-- user-scale=no = to define if allowed to zoom, these properties are for mobile -->
+
+    <title>Document</title>
+    <link rel="stylesheet" href="css/styles.css"/> <!--relation is stylesheet of the file that is linked -->
+    <!-- CSS - Cascading SS why??? -->
+
+    <script src="script.js" defer></script> <!-- script.js ko jaise hi encounter karta hai - browser iss path pr script,js ke current domain ke script.js lata hai, download karta hai, fir execute -->
+    <!-- defer --  we want ke pehle download ho jae pr download baad mai ho only useful when we are doing HTML manipulation ;;defer mai download start mai execute end mai-->
+     <!--**** another mode async can be used ->-->
+     <!-- async maode mai download parallel hota hai; async mai jaise hi download complete hoga execute kardega (even if html 50% parsed);; aync tab karre jab html manipulation nhi krre, but want to utilise time of download better-->
+     <!--Script mai blocking (normal - download hoga toh aur kuch nhi hoga) ;  non-blocking (aync - jab tak download hoga tab tak age ka parse hojaega )-->
+
+     <script src="data.js" defer></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div>
+            <header id="header">Welcome to eCommerse Site</header>
+        </div>
+        <!-- Semantic tag - meaning of tag itself is ts name - head, footer, p  (html perspective)-->
+        <!-- developer ke liye, and website ko SEO(Search engine) friendly banane ke liye, on how its rendered on SE -->
+        <div id="tag1">List of Products</div>
+        <div id="tag2"></div>
+        <div id="data"></div>
+    </div>
+    
+</body>
+</html>
