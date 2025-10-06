@@ -50,3 +50,30 @@ function foo(arg1) { // arg1 is parameter so modify karne ke kya zarurat - can b
     console.log(arg1);
 }
 foo("Test");
+
+function FormComponent(props) {
+    let tempVariable = 10;
+    const [array1, setArray1] = React.useState(["TextBox1", "TextBox2", "TextBox3"]); // usestate ek fnc hai jo 2 value return karta hai - array destructuring use karke le sakte hai - 1st is the current state value, 2nd is a fnc to update the state value
+
+    function changeOrder() {
+        const newArray = [...array1].reverse(); // spread operator to create a copy of the array and then reverse it
+        setArray1(newArray); // update the state value
+        tempVariable = tempVariable + 10; // this will not cause a re-render
+        console.log("tempVariable: ", tempVariable);
+    }
+    return (
+        <div>
+        {
+            array1.map((item) => {
+                return (
+                <div key={item}> // case 3 - best
+                    <input type="text" placeholder={item} />
+                </div> 
+                )
+            })
+        };
+        <Button label="Change order" clickBehavior={changeOrder} />
+        </div>
+
+    );
+}

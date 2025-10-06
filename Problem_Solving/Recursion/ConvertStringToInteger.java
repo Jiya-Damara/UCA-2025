@@ -54,7 +54,7 @@ public class ConvertStringToInteger {
 
     for (int i = 0; i < testStrings.length; i++) {
       int result = converter.convertStringToInteger(testStrings[i]);
-      // System.out.println(testStrings[i] + " → " + result);
+      System.out.println(testStrings[i] + " → " + result);
       assert result == expectedResults[i] : "Test case " + (i + 1) + " failed";
     }
   }
