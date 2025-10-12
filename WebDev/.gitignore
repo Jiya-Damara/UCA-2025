@@ -123,3 +123,13 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Local Next.js cache (improves dev performance, no need in git)
+.next/cache
+
+# Output directory for static export (Next.js)
+out/
+
+# Local coverage folders (Jest, Cypress, etc.)
+cypress/videos/
+cypress/screenshots/
