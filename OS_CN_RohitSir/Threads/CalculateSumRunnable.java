@@ -33,7 +33,11 @@ public class CalculateSumRunnable implements Runnable {
     thread.start();
 
     // Method nhi honge (use case: itna access nhi dena) 
-    // runnable.setName(); -> cannot do so
-    // Can rename for CalculateSumThread
+    // runnable.setName(); runnable.start(); -> cannot do so
+    // thread.setName(); -> can do so
   }
 }
+
+// Runnable = a Job you give someone.
+// Thread = the Worker who actually performs the job.
+// You can rename the worker, decide how fast they work (priority), or make them start working — but you can’t rename the job sheet itself.
