@@ -30,6 +30,12 @@ var foo3 = param1 => {
     console.log("Inside foo4 function with params as: ", param1);
 };
 
+// Anonymous functions are not reused — they are temporary, used when:
+// You need to pass a function as an argument (callback)
+// You don’t need to call it again by name
+// Eg : map, setTimeout, event listeners etc.
+// You avoid polluting the global scope with function names you’ll never reuse.
+
 // 5. Self Invoking Function - function which calls itself immediately after its declaration
 ((param1) => {
     console.log("Inside foo5 function with params as: ", param1);
@@ -44,7 +50,7 @@ function* scoreGenerator(initalScore = 0) {
     let currentScore = initalScore;
     while (currentScore < 2) {
         // Yielding the currentScore & incrementing it
-        yield currentScore;
+        yield currentScore; // pause here, return this value
         currentScore++;
     }
     return currentScore; // This will return when generator is done
@@ -58,7 +64,10 @@ scoreGen.next(); // { value: 1, done: false }
 scoreGen.next(); // { value: 2, done: true }      
 scoreGen.next(); // { value: undefined, done: true }
 
-// Client control of generation of values
+// Think of yield as “pause here and return this value”.
+// When you call .next(), execution resumes from where it paused.
+
+// Client control of generation of values - Because client decide when to call .next().
 // execute & pause
 // jab chahiye tab next() call karke agla value le skte hai
 
