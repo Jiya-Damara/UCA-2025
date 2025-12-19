@@ -1,0 +1,40 @@
+1. SELECT title FROM Movie WHERE director = "Steven Spielberg";
+
+2. SELECT DISINCT m.YEAR FROM Movie m INNER JOIN Rating ra ON m.mId = ra.mId WHERE ra.stars = 4 OR ra.stars = 5 ORDER BY m.year;
+
+3. SELECT title FROM Movie WHERE mId NOT IN (SELECT mId FROM Rating);
+3. SELECT m.title FROM Movie m LEFT JOIN Rating ra ON m.mId = ra.mId WHERE ra.mId = NULL;
+
+4. SELECT re.name FROM Reviewer re INNER JOIN Rating ra ON re.rId = ra.rId WHERE ratingDate IS NULL;
+
+5. SELECT re.name, m.title, ra.stars, ra.ratingDate FROM Rating ra INNER JOIN Movie m ON ra.mId = m.mId INNER JOIN Reviewer re ON ra.rId = re.rId ORDER BY re.name, m.title, ra.stars;
+
+6. SELECT re.name, m.title FROM Rating r1, Rating r2 ON r1.rId = r2.rId AND r1.mId = r2.mId JOIN Reviewer re ON r1.rId = re.rId JOIN Movie m ON r1.mId = m.mId WHERE r1.ratingDate < r2.ratingDate AND r1.stars < r2.stars;
+
+7. SELECT m.title, MAX(ra.stars) AS max_stars FROM Movie m JOIN Rating ra ON m.mId = ra.mId GROUP BY m.title ORDER BY m.title;
+
+8. SELECT m.title, (MAX(stars) - MIN(stars)) AS ratingSpread FROM Movie m INNER JOIN Rating ra ON m.mId = ra.mId GROUP BY m.title ORDER BY ratingSpread DESC;
+
+9. 
+
+10. SELECT re.name FROM Reviewer re JOIN Rating ra ON re.rId = ra.rId JOIN Movie m ON m.mId = ra.mId WHERE m.title = "Gone with the Wind";
+
+11. SELECT re.name, m.title, ra.stars FROM Rating ra JOIN Reviewer re ON ra.rId = re.rId JOIN Movie m ON ra.mId = m.mId WHERE re.name = m.director;
+
+12. SELECT re.name FROM Reviewer re UNION SELECT m.title FROM Movie m ORDER BY re.name, m.title;
+
+13. SELECT m.title FROM Movie m WHERE m.mId NOT IN (SELECT ra.mId FROM Rating ra JOIN Reviewer re ON ra.rId = re.rId WHERE re.name = "Chris Jackson") ORDER BY m.title;
+
+14. SELECT DISTINCT re1.name AS reviewer1, re2.name AS reviewer2 FROM Rating ra1 JOIN Rating ra2 ON ra1.mId = ra2.mId AND ra1.rId < ra2.rId JOIN Reviewer re1 ON ra1.rId = re1.rId JOIN Reviewer re2 ON ra2.rID = re2.rId ORDER BY reviewer1, reviewer2;
+
+15. SELECT re.name, m.title, ra.stars FROM Rating ra JOIN Movie m ON ra.mId = m.mId JOIN Reviewer re ON ra.rId = re.rId WHERE stars IN (SELECT MIN(stars) FROM Rating);
+
+16. SELECT m.title, AVG(ra.stars) AS avg_rating FROM Movie m JOIN Rating ra ON m.mId = ra.mId GROUP BY m.title ORDER BY avg_rating DESC, m.title;
+
+17. SELECT re.name FROM Reviewer re JOIN Rating ra ON re.rId = ra.rId GROUP BY re.name HAVING count(ra.mId) >= 3;
+
+18. SELECT title, director FROM Movie m WHERE director IN (SELECT director FROM Movie GROUP BY director HAVING count(mId) > 1) ORDER BY director, title;
+
+19. SELECT m.title, AVG(ra.stars) AS avg_rating FROM Movie m JOIN Rating ra ON m.mId = ra.mId GROUP BY m.mId HAVING avg_rating = (SELECT MAX(avg_stars) FROM (SELECT AVG(stars) AS avg_stars FROM Rating GROUP BY mId));
+
+20. SELECT director, title FROM Movie WHERE mId IN (SELECT mId FROM Rating  WHERE stars IN (SELECT stars FROM Rating));

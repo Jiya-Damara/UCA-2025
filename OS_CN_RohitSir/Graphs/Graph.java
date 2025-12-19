@@ -48,6 +48,31 @@ class Graph {
     }
   }
 
+  public boolean isCycleDetected() {
+    Set<Integer> visited = new HashSet<>();
+    for (Integer node : edgeMap.keySet()) {
+      if (!visited.contains(node)) {
+        if (dfs(node, visited, null)) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  private boolean dfs (int currNode, Set<Integer> visited, Integer parentNode) {
+    visited.add(currNode);
+    for (Integer childNode : edgeMap.getOrDefault(currNode, new HashSet<>())) {
+      if (!visited.contains(childNode)) {
+        boolean result = dfs (childNode, visited, currNode);
+        if (result) return true;
+      } else {
+        if (childNode != parentNode) return true;
+      }
+    }
+      return false;
+  }
+
   public static void main(String[] args) {
     Graph g = new Graph();
 
